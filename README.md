@@ -23,6 +23,8 @@ app-ads.txt 页面复制的完整 154 行卖方清单及 `ownerdomain=boopfun.co
 后续更新 Unity 清单时重新从后台复制完整集合，保留 Google 授权行与所有者域名，
 核对记录字段和重复项后按上述入口整站发布，并执行下方线上与源码比对。
 
+2026-09-15 追加 AppLovin MAX（后台 Account > App-ads.txt Info 的整段）、Meta Audience Network（按 Meta for Developers 的 app-ads.txt 说明写 Business ID 行）与 Pangle（后台左下角的账户 ID 行，加 Pangle app-ads.txt 说明里的三行 PubMatic）。更新时各自从后台 / 说明重新复制，与已有行按「域名 + ID + 关系」去重。
+
 部署后可核对线上授权记录与源码一致：
 
 ```bash
@@ -46,4 +48,4 @@ CNAME 残留）。
 🔴 **改 DNS 前先 `DescribeDomainRecords` 存快照，改完 diff 比对。**
 飞书企业邮箱的 3 条 MX 与 2 条 TXT 绝对不能动，删了收不到邮件。
 
-> 文档维护：Claude Opus 5（2026-09-06）；GPT-6（2026-09-08，Unity Ads 卖方清单来源与部署说明）
+> 文档维护：Claude Opus 5（2026-09-06）；GPT-6（2026-09-08，Unity Ads 卖方清单来源与部署说明）；Claude Opus 5（2026-09-15，追加 AppLovin / Meta / Pangle 的授权行）
