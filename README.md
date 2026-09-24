@@ -5,7 +5,7 @@ BOOPFUN LIMITED 的公司主页。托管在 Firebase Hosting，项目 `boopfun-w
 | 站点 | 域名 | 内容 |
 |---|---|---|
 | `boopfun-main` | `boopfun.com` | 本仓库的 `public/` |
-| `boopfun-web` | `legal.boopfun.com` | 法律文件，源码由 `gthbj/arrows` 仓库的 `docs/legal/` 管理，部署入口以该仓库发布 runbook 为准 |
+| `boopfun-web` | `legal.boopfun.com` | 法律文件，源码由 `boopfun-limited/boopfun-legal` 仓库管理，部署入口以该仓库 README 的「部署」一节为准 |
 
 ## 部署
 
@@ -48,4 +48,4 @@ CNAME 残留）。
 🔴 **改 DNS 前先 `DescribeDomainRecords` 存快照，改完 diff 比对。**
 飞书企业邮箱的 3 条 MX 与 2 条 TXT 绝对不能动，删了收不到邮件。
 
-> 文档维护：Claude Opus 5（2026-09-06）；GPT-6（2026-09-08，Unity Ads 卖方清单来源与部署说明）；Claude Opus 5（2026-09-15，追加 AppLovin / Meta / Pangle 的授权行）
+> 文档维护：Claude Opus 5（2026-09-06）；GPT-6（2026-09-08，Unity Ads 卖方清单来源与部署说明）；Claude Opus 5（2026-09-15，追加 AppLovin / Meta / Pangle 的授权行）；Claude Opus 5.5（2026-09-24，法律站源码改指 `boopfun-limited/boopfun-legal`）
