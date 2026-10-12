@@ -7,6 +7,35 @@ BOOPFUN LIMITED 的公司主页。托管在 Firebase Hosting，项目 `boopfun-w
 | `boopfun-main` | `boopfun.com` | 本仓库的 `public/` |
 | `boopfun-web` | `legal.boopfun.com` | 法律文件，源码由 `boopfun-limited/boopfun-legal` 仓库管理，部署入口以该仓库 README 的「部署」一节为准 |
 
+## 首页维护
+
+首页为无构建依赖的静态 HTML / CSS：`public/index.html`、`public/styles.css`。
+游戏展示仅使用商店横版 feature graphic，按原始 **1024 × 500** 比例完整显示；
+不要把图片固定为其它高度，也不要换成竖版玩法截图。网页图片为 WebP，
+首屏加载三张，其余延迟加载；不依赖外部字体或 JavaScript。
+
+- Arrows Out：`arrows/docs/store-listing/en-US/images/featureGraphic.png`
+- Arrows 3D：`arrows-3d/Docs/store-listing/en-US/images/featureGraphic.png`
+- Water Sort：`water_sort/docs/store-listing/en-US/images/featureGraphic.png`
+- Sudoku：`sudoku/docs/store/feature-graphic-1024x500.png`
+- boopdoku：从 [Google Play 正式商店页](https://play.google.com/store/apps/details?id=com.boopfun.boopdoku) 的公开 feature graphic 获取。
+
+上述源码路径相对于各兄弟仓；优化后的发布文件位于 `public/assets/*-feature.webp`。
+商店入口以 [BOOPFUN 开发者页](https://play.google.com/store/apps/developer?id=BOOPFUN) 为准，
+五款游戏均指向各自的正式 Google Play 页面。`social.png` 为分享预览图；
+`robots.txt` 与 `sitemap.xml` 指向主域名。
+
+本地预览：
+
+```bash
+python3 -m http.server 8765 --bind 127.0.0.1 --directory public
+```
+
+修改后检查桌面与手机宽度、图片自然比例与显示比例、五个商店入口及隐私链接。
+保留 `public/app-ads.txt`，发布后按下文核对线上与源码一致。
+
+> 首页维护：GPT-6（2026-10-12，官网重设计、横版商店素材与下载入口）
+
 ## 部署
 
 ```bash

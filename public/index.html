@@ -3,74 +3,87 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BOOPFUN LIMITED</title>
-<meta name="description" content="BOOPFUN LIMITED builds casual puzzle games for mobile.">
-<style>
-  :root {
-    --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --line: #e5e5e5; --accent: #2b6cb0;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #16181c; --fg: #e8e8e8; --muted: #9a9a9a; --line: #2c2f36; --accent: #7aa7d9; }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--fg);
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  main { max-width: 42rem; margin: 0 auto; padding: 5rem 1.5rem 4rem; }
-  h1 { font-size: 1.75rem; letter-spacing: -0.01em; margin: 0 0 0.4rem; }
-  .tag { color: var(--muted); margin: 0 0 3rem; }
-  h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
-       color: var(--muted); font-weight: 600; margin: 2.5rem 0 0.9rem; }
-  ul { list-style: none; padding: 0; margin: 0; }
-  li { padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
-  li:last-child { border-bottom: 0; }
-  .name { font-weight: 600; }
-  .desc { color: var(--muted); }
-  .status { color: var(--muted); font-size: 0.85rem; }
-  a { color: var(--accent); }
-  address { font-style: normal; color: var(--muted); }
-  footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
-           color: var(--muted); font-size: 0.85rem; }
-</style>
+<meta name="theme-color" content="#f7f7ed">
+<title>BoopFun — A little pause. A lot of play.</title>
+<meta name="description" content="Find your next little escape. Explore Arrows Out, Arrows 3D, Water Sort, Sudoku, and boopdoku — mobile puzzle games by BOOPFUN LIMITED.">
+<link rel="canonical" href="https://boopfun.com/">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/styles.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BoopFun — A little pause. A lot of play.">
+<meta property="og:description" content="Arrows, colors, numbers, and a few pandas. Find a puzzle for your kind of break.">
+<meta property="og:url" content="https://boopfun.com/">
+<meta property="og:image" content="https://boopfun.com/assets/social.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<main>
-  <h1>BOOPFUN LIMITED</h1>
-  <p class="tag">We build casual puzzle games for mobile.</p>
-
-  <h2>Games</h2>
-  <ul>
-    <li>
-      <div class="name">Arrows Out</div>
-      <div class="desc">An arrow-clearing puzzle. Tap an arrow to send it flying — if nothing blocks its path.</div>
-      <div class="status">In development</div>
-    </li>
-    <li>
-      <div class="name">Water Sort</div>
-      <div class="desc">A color-sorting puzzle. Pour, plan, and separate every shade.</div>
-      <div class="status">In development</div>
-    </li>
-    <li>
-      <div class="name">Boopdoku</div>
-      <div class="desc">A Sudoku variant for players who want the logic without the grind.</div>
-      <div class="status">In development</div>
-    </li>
-  </ul>
-
-  <h2>Contact</h2>
-  <p><a href="mailto:contact@boopfun.com">contact@boopfun.com</a></p>
-
-  <h2>Company</h2>
-  <address>
-    BOOPFUN LIMITED<br>
-    Rm D07, 8/F, Kai Tak Fty Building<br>
-    No. 99 King Fuk Street, Sanpokong<br>
-    Kowloon, Hong Kong
-  </address>
-
-  <footer>&copy; 2026 BOOPFUN LIMITED</footer>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap">
+ <a class="wordmark" href="/" aria-label="BoopFun home">boopfun<span class="brand-dot">.</span></a>
+ <nav aria-label="Main navigation"><a href="#games">Our games</a><a href="#about">About us</a><a class="nav-contact" href="#contact">Say hello <span aria-hidden="true">↗</span></a></nav>
+</header>
+<main id="main">
+ <section class="hero wrap" aria-labelledby="hero-title">
+  <div class="hero-copy"><p class="eyebrow"><span class="tiny-spark" aria-hidden="true">✳</span> A little everyday delight</p>
+   <h1 id="hero-title">A little pause.<br>A lot of <span class="play-word">play<svg viewBox="0 0 240 24" aria-hidden="true"><path d="M5 17Q115 -2 232 12"/></svg></span>.</h1>
+   <p class="hero-description">A clear path. A perfect match. That last piece falling into place. We make puzzle games for those little feel-good moments.</p>
+   <a class="button" href="#games">Find your next puzzle <span aria-hidden="true">↓</span></a>
+   <p class="hero-note">Made for your phone. Played at your pace.</p>
+  </div>
+  <div class="hero-art" aria-label="Discover our puzzle games">
+   <div class="hero-orbit" aria-hidden="true"></div><span class="hero-spark" aria-hidden="true">✳</span>
+   <a class="hero-banner banner-top" href="#arrows3d" aria-label="Explore Arrows 3D"><img src="/assets/arrows3d-feature.webp" width="1024" height="500" alt="Arrows 3D — official store artwork" fetchpriority="high"></a>
+   <a class="hero-banner banner-middle" href="#arrows" aria-label="Explore Arrows Out"><img src="/assets/arrows-feature.webp" width="1024" height="500" alt="Arrows Out — official store artwork" fetchpriority="high"></a>
+   <a class="hero-banner banner-bottom" href="#watersort" aria-label="Explore Water Sort"><img src="/assets/watersort-feature.webp" width="1024" height="500" alt="Water Sort — official store artwork" fetchpriority="high"></a>
+  </div>
+ </section>
+ <div class="puzzle-strip" aria-hidden="true"><div class="wrap"><span>Find a path <b>↗</b></span><span>Sort the colors <b>●</b></span><span>Follow the clues <b>✳</b></span><span>Enjoy the little wins <b>☺</b></span></div></div>
+ <section class="games-section wrap" id="games" aria-labelledby="games-title">
+  <div class="section-heading"><div><p class="eyebrow">The BoopFun collection</p><h2 id="games-title">What’s your kind of fun?</h2></div><p>A little logic, a little curiosity.<br>Pick a puzzle and make it your moment.</p></div>
+  <div class="games-grid"><article class="game game-arrows" id="arrows">
+ <a class="game-art" href="https://play.google.com/store/apps/details?id=com.boopfun.arrows" target="_blank" rel="noopener noreferrer" aria-label="View Arrows Out on Google Play (opens in a new tab)">
+  <img src="/assets/arrows-feature.webp" width="1024" height="500" loading="lazy" alt="Arrows Out — official store artwork">
+ </a>
+ <div class="game-heading"><div><h3>Arrows Out</h3><p>Find your way out.</p></div></div>
+ <p class="game-description">Follow the arrows, find a clear path, and tap your way to an empty board. One good move opens up the next.</p>
+ <a class="store-link" href="https://play.google.com/store/apps/details?id=com.boopfun.arrows" target="_blank" rel="noopener noreferrer" aria-label="Get Arrows Out on Google Play (opens in a new tab)"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 3.5v17L19 12 4 3.5Z" fill="currentColor"/></svg><span>Get it on <strong>Google Play</strong></span><span aria-hidden="true">↗</span></a>
+ </article><article class="game game-arrows3d" id="arrows3d">
+ <a class="game-art" href="https://play.google.com/store/apps/details?id=com.boopfun.arrows3d" target="_blank" rel="noopener noreferrer" aria-label="View Arrows 3D on Google Play (opens in a new tab)">
+  <img src="/assets/arrows3d-feature.webp" width="1024" height="500" loading="lazy" alt="Arrows 3D — official store artwork">
+ </a>
+ <div class="game-heading"><div><h3>Arrows 3D</h3><p>A new angle on puzzles.</p></div></div>
+ <p class="game-description">Turn the shape, look around every corner, and slide the arrows away. A little perspective makes all the difference.</p>
+ <a class="store-link" href="https://play.google.com/store/apps/details?id=com.boopfun.arrows3d" target="_blank" rel="noopener noreferrer" aria-label="Get Arrows 3D on Google Play (opens in a new tab)"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 3.5v17L19 12 4 3.5Z" fill="currentColor"/></svg><span>Get it on <strong>Google Play</strong></span><span aria-hidden="true">↗</span></a>
+ </article><article class="game game-watersort" id="watersort">
+ <a class="game-art" href="https://play.google.com/store/apps/details?id=com.boopfun.watersort" target="_blank" rel="noopener noreferrer" aria-label="View Water Sort on Google Play (opens in a new tab)">
+  <img src="/assets/watersort-feature.webp" width="1024" height="500" loading="lazy" alt="Water Sort — official store artwork">
+ </a>
+ <div class="game-heading"><div><h3>Water Sort</h3><p>A splash of satisfaction.</p></div></div>
+ <p class="game-description">Pour, plan, and bring every color together. Turn a jumble of shades into neatly sorted bottles.</p>
+ <a class="store-link" href="https://play.google.com/store/apps/details?id=com.boopfun.watersort" target="_blank" rel="noopener noreferrer" aria-label="Get Water Sort on Google Play (opens in a new tab)"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 3.5v17L19 12 4 3.5Z" fill="currentColor"/></svg><span>Get it on <strong>Google Play</strong></span><span aria-hidden="true">↗</span></a>
+ </article><article class="game game-sudoku" id="sudoku">
+ <a class="game-art" href="https://play.google.com/store/apps/details?id=com.boopfun.sudoku" target="_blank" rel="noopener noreferrer" aria-label="View Sudoku on Google Play (opens in a new tab)">
+  <img src="/assets/sudoku-feature.webp" width="1024" height="500" loading="lazy" alt="Sudoku — official store artwork">
+ </a>
+ <div class="game-heading"><div><h3>Sudoku</h3><p>Make room for a little logic.</p></div></div>
+ <p class="game-description">Your familiar 9×9 puzzle, with notes, hints, and six difficulty levels. Find the next number, one square at a time.</p>
+ <a class="store-link" href="https://play.google.com/store/apps/details?id=com.boopfun.sudoku" target="_blank" rel="noopener noreferrer" aria-label="Get Sudoku on Google Play (opens in a new tab)"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 3.5v17L19 12 4 3.5Z" fill="currentColor"/></svg><span>Get it on <strong>Google Play</strong></span><span aria-hidden="true">↗</span></a>
+ </article><article class="game game-boopdoku" id="boopdoku">
+ <a class="game-art" href="https://play.google.com/store/apps/details?id=com.boopfun.boopdoku" target="_blank" rel="noopener noreferrer" aria-label="View boopdoku on Google Play (opens in a new tab)">
+  <img src="/assets/boopdoku-feature.webp" width="1024" height="500" loading="lazy" alt="boopdoku — official store artwork">
+ </a>
+ <div class="game-heading"><div><h3>boopdoku</h3><p>Small pandas. Clever puzzles.</p></div></div>
+ <p class="game-description">Give every panda a place: one in each row, column, and colored territory. Follow the clues until they all feel at home.</p>
+ <a class="store-link" href="https://play.google.com/store/apps/details?id=com.boopfun.boopdoku" target="_blank" rel="noopener noreferrer" aria-label="Get boopdoku on Google Play (opens in a new tab)"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 3.5v17L19 12 4 3.5Z" fill="currentColor"/></svg><span>Get it on <strong>Google Play</strong></span><span aria-hidden="true">↗</span></a>
+ </article></div>
+  <p class="collection-note">Find all our games on <a href="https://play.google.com/store/apps/developer?id=BOOPFUN" target="_blank" rel="noopener noreferrer">Google Play <span aria-hidden="true">↗</span></a></p>
+ </section>
+ <section class="about-section" id="about" aria-labelledby="about-title"><div class="wrap about-inner">
+  <div><p class="eyebrow">Hello, we’re BoopFun</p><h2 id="about-title">Good things come<br>in little puzzles.</h2></div>
+  <div class="about-copy"><p>We’re a mobile game studio based in Hong Kong. We make casual puzzles built around simple ideas: follow a path, sort a color, find a number.</p><p>Our favorite part? The moment it all clicks. A small discovery, a satisfying solution, and a reason to smile in the middle of your day.</p><span class="about-signoff">A little more fun, every day. <span aria-hidden="true">☺</span></span></div>
+ </div></section>
+ <section class="contact-section wrap" id="contact" aria-labelledby="contact-title"><div><p class="eyebrow">Let’s talk</p><h2 id="contact-title">Got a question?<br>Or just a good puzzle pun?</h2><p>Game support, feedback, or working together — we’d love to hear from you.</p></div><a class="contact-link" href="mailto:contact@boopfun.com">contact@boopfun.com <span aria-hidden="true">↗</span></a></section>
 </main>
+<footer class="site-footer wrap"><div class="footer-top"><div><a class="wordmark" href="/" aria-label="BoopFun home">boopfun<span class="brand-dot">.</span></a><p>Little puzzles. Happy moments.</p></div><address><strong>BOOPFUN LIMITED</strong><br>Rm D07, 8/F, Kai Tak Fty Building<br>No. 99 King Fuk Street, Sanpokong<br>Kowloon, Hong Kong</address><nav aria-label="Footer navigation"><a href="#games">Our games</a><a href="https://legal.boopfun.com/privacy/">Privacy policy</a><a href="https://legal.boopfun.com/">Legal information</a><a href="mailto:contact@boopfun.com">Contact us</a></nav></div><div class="footer-bottom"><span>© 2026 BOOPFUN LIMITED. All rights reserved.</span><span>Google Play is a trademark of Google LLC.</span></div></footer>
 </body>
 </html>

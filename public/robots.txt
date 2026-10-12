@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://boopfun.com/sitemap.xml
