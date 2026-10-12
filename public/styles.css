@@ -1,214 +1,198 @@
 :root {
-  --paper: #f7f7ed;
-  --ink: #173f35;
-  --muted: #596b62;
-  --orange: #dc763d;
-  --line: #d9ddd1;
+  --paper: #f8f8f1;
+  --ink: #203e36;
+  --muted: #65736a;
+  --orange: #b76035;
+  --line: #dce1d5;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--ink);
   background: var(--paper);
   font-synthesis: none;
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 108px;
 }
 * { box-sizing: border-box; }
-html, body { overflow-x: clip; }
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  background:
-    radial-gradient(640px 420px at 88% -6%, #f6dfc4 0%, transparent 70%),
-    radial-gradient(720px 520px at -8% 22%, #e3ebce 0%, transparent 70%),
-    var(--paper);
-}
+body { margin: 0; -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
-a:focus-visible { outline: 3px solid #ad4c21; outline-offset: 6px; }
-img { max-width: 100%; height: auto; display: block; }
+a:focus-visible { outline: 2px solid var(--orange); outline-offset: 5px; }
+img { display: block; max-width: 100%; height: auto; }
 p, h1, h2, h3 { margin: 0; }
-.wrap { width: min(1200px, calc(100% - 96px)); margin-inline: auto; }
-.skip-link { position: absolute; top: -100px; left: 20px; padding: 14px; background: var(--ink); color: white; z-index: 20; }
+.wrap { width: min(1160px, calc(100% - 96px)); margin-inline: auto; }
+.icon { width: 20px; height: 20px; display: block; flex: 0 0 auto; }
+.skip-link { position: fixed; top: -100px; left: 20px; padding: 14px; background: var(--ink); color: white; z-index: 30; }
 .skip-link:focus { top: 10px; }
-
-/* Header */
-.site-header {
-  position: sticky; top: 0; z-index: 10;
-  background: #f7f7edd9;
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-  border-bottom: 1px solid #173f3512;
-}
-.site-header-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 20px; }
-.wordmark { font-size: 34px; letter-spacing: -2.2px; font-weight: 900; line-height: 1.2; }
+.eyebrow { font-size: 10px; line-height: 1.5; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; }
+/* A consistent 44px target with independently centered text and vector icons. */
+.site-header { position: sticky; top: 0; z-index: 10; background: #f8f8f1ed; border-bottom: 1px solid #203e3610; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.site-header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 88px; gap: 24px; }
+.wordmark { display: inline-block; font-size: 34px; line-height: 1; letter-spacing: -2px; font-weight: 900; }
 .brand-dot { color: var(--orange); }
-.site-header nav { display: flex; align-items: center; gap: 34px; font-size: 14px; font-weight: 600; }
-.site-header nav a:not(.nav-contact) { padding: 6px 2px; }
-.site-header nav a:not(.nav-contact):hover { text-decoration: underline; text-underline-offset: 5px; text-decoration-color: var(--orange); text-decoration-thickness: 2px; }
-.nav-contact { padding: 12px 20px; border: 1px solid #b7c0ae; border-radius: 30px; display: inline-flex; align-items: center; gap: 20px; background: #ffffff80; transition: background .2s, border-color .2s, transform .2s; }
-.nav-contact:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); transform: translateY(-1px); }
-
-/* Hero */
-.hero { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 40px; min-height: 640px; padding-block: 48px 78px; }
-.eyebrow { text-transform: uppercase; letter-spacing: 2px; font-size: 11px; font-weight: 700; color: #4d6156; }
-.hero .eyebrow { display: flex; align-items: center; gap: 10px; }
-.tiny-spark { font-size: 25px; color: var(--orange); line-height: 1; }
-h1 { font-size: clamp(52px, 5.8vw, 82px); letter-spacing: -4.3px; line-height: 1.035; font-weight: 800; margin-top: 26px; }
-.play-word { position: relative; display: inline-block; color: var(--orange); }
-.play-word svg { position: absolute; width: 100%; height: 18px; bottom: -13px; left: 0; overflow: visible; }
-.play-word path { fill: none; stroke: var(--orange); stroke-width: 5; stroke-linecap: round; }
-.hero-description { font-size: 17px; line-height: 1.8; max-width: 395px; color: var(--muted); margin-top: 32px; }
-.button { display: inline-flex; gap: 24px; align-items: center; background: var(--ink); color: var(--paper); padding: 18px 26px; border-radius: 999px; margin-top: 28px; font-size: 14px; font-weight: 700; box-shadow: 0 10px 24px #173f3533; transition: transform .2s, background .2s, box-shadow .2s; }
-.button:hover { background: #28594b; transform: translateY(-2px); box-shadow: 0 14px 30px #173f3540; }
-.button span { font-size: 21px; }
-.hero-note { font-size: 11px; color: var(--muted); margin-top: 18px; letter-spacing: .3px; }
-.hero-art { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-content: center; isolation: isolate; }
-.hero-orbit { position: absolute; inset: -34px -14px; border-radius: 50%; background: radial-gradient(closest-side, #e3ebce 0%, #e3ebce00 78%); z-index: -1; }
-.hero-banner { position: relative; width: 100%; border: 5px solid white; border-radius: 18px; overflow: hidden; box-shadow: 0 18px 36px #2640312b, 0 3px 8px #26403114; transition: translate .25s, box-shadow .25s; }
-.hero-banner img { width: 100%; aspect-ratio: 1024 / 500; object-fit: contain; }
-.hero-banner:hover { translate: 0 -6px; box-shadow: 0 26px 44px #26403136, 0 4px 10px #2640311a; }
-.banner-top { grid-column: span 2; transform: rotate(-3deg); }
-.banner-middle { transform: rotate(-4deg); }
-.banner-bottom { transform: rotate(4deg); }
-.hero-spark { position: absolute; font-size: 67px; color: var(--orange); left: -26px; top: -45px; transform: rotate(10deg); z-index: 2; }
-
-/* Strip */
-.puzzle-strip { border-block: 1px solid var(--line); padding: 20px 0; background: #ffffff59; }
-.puzzle-strip .wrap { display: flex; justify-content: space-between; gap: 20px; }
-.puzzle-strip span { display: flex; align-items: center; gap: 32px; font-size: 13px; font-weight: 600; }
-.puzzle-strip b { font-size: 22px; color: #a65b35; }
-
-/* Games */
-.games-section { padding-block: 96px 76px; }
-.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 44px; }
-h2 { font-size: clamp(32px, 3.6vw, 46px); line-height: 1.12; letter-spacing: -1.8px; font-weight: 750; }
-.section-heading h2 { margin-top: 16px; }
-.section-heading > p { font-size: 14px; line-height: 1.65; color: var(--muted); }
-.games-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 40px 28px; }
-.game {
-  grid-column: span 2; min-width: 0; display: flex; flex-direction: column;
-  background: white; border-radius: 22px; padding: 14px 14px 20px;
-  border: 1px solid #173f3510;
-  box-shadow: 0 2px 6px #173f350a, 0 16px 36px #173f350f;
-  transition: translate .25s, box-shadow .25s;
-}
+.site-header nav { display: flex; align-items: center; gap: 32px; font-size: 13px; font-weight: 600; }
+.site-header nav a { display: inline-flex; justify-content: center; align-items: center; min-height: 44px; line-height: 1; }
+.site-header nav a:not(.nav-contact):hover { color: var(--orange); }
+.nav-contact { gap: 14px; min-width: 140px; padding: 0 20px; border: 1px solid #b9c4b6; border-radius: 999px; background: transparent; transition: background .2s, color .2s, border-color .2s; }
+.nav-contact .icon { width: 17px; height: 17px; }
+.nav-contact:hover { color: white; background: var(--ink); border-color: var(--ink); }
+/* Arrows Out leads both the editorial spotlight and the game collection. */
+.hero { display: grid; grid-template-columns: 1fr 1.07fr; align-items: center; gap: 66px; padding-block: 88px 90px; }
+.hero .eyebrow { display: flex; align-items: center; gap: 9px; color: var(--muted); }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+h1 { font-size: clamp(46px, 4.8vw, 66px); line-height: 1.06; letter-spacing: -3.4px; font-weight: 750; margin-top: 25px; }
+h1 > span { color: var(--orange); }
+.hero-description { font-size: 16px; line-height: 1.8; color: var(--muted); max-width: 360px; margin-top: 25px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 22px; min-height: 54px; padding: 0 24px; margin-top: 30px; border-radius: 999px; background: var(--ink); color: white; font-size: 13px; font-weight: 600; line-height: 1; transition: background .2s, translate .2s; }
+.button:hover { background: #35594b; translate: 0 -2px; }
+.button .icon { width: 18px; height: 18px; }
+.hero-note { color: var(--muted); font-size: 11px; margin-top: 17px; }
+.hero-feature { min-width: 0; padding: 20px; border-radius: 24px; background: #eeeef3; border: 1px solid #dedee6; }
+.feature-topline { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 0 2px 18px; }
+.feature-topline .eyebrow { color: #696276; font-size: 9px; letter-spacing: 1.5px; }
+.feature-number { font-size: 10px; color: #696276; }
+.hero-banner { display: block; border-radius: 12px; overflow: hidden; border: 1px solid #dedce8; }
+.hero-banner img, .game-art img { width: 100%; height: auto; aspect-ratio: 1024 / 500; object-fit: contain; }
+.feature-bottomline { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 19px 2px 0; }
+.feature-kicker { font-size: 15px; font-weight: 600; letter-spacing: -.2px; }
+.feature-bottomline p { font-size: 11px; color: var(--muted); margin-top: 7px; }
+.circle-link { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; flex: 0 0 auto; border-radius: 50%; background: #ffffffa6; border: 1px solid #d9d8e2; transition: background .2s; }
+.circle-link:hover { background: white; }
+.circle-link .icon { width: 18px; height: 18px; }
+.puzzle-strip { border-block: 1px solid var(--line); }
+.puzzle-strip > .wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 22px; }
+.puzzle-strip span { font-size: 11px; color: var(--muted); }
+.puzzle-strip > .wrap > span { font-weight: 600; color: var(--ink); }
+.puzzle-strip .wrap > div { display: flex; align-items: center; gap: 22px; }
+.puzzle-strip i { width: 4px; height: 4px; border-radius: 50%; background: #b48c68; }
+/* The first pair has equal emphasis; all images retain their complete landscape ratio. */
+.games-section { padding-block: 86px 64px; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 34px; }
+h2 { font-size: clamp(32px, 3.2vw, 42px); letter-spacing: -1.7px; line-height: 1.12; font-weight: 700; }
+.section-heading h2 { margin-top: 14px; }
+.section-heading .eyebrow { color: var(--muted); }
+.section-heading > p { font-size: 13px; line-height: 1.75; color: var(--muted); }
+.games-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 30px 24px; }
+.game { grid-column: span 2; min-width: 0; display: flex; flex-direction: column; border-radius: 18px; overflow: hidden; background: #fff; border: 1px solid #e0e3d9; transition: border-color .2s, box-shadow .2s; }
 .game:nth-child(-n+2) { grid-column: span 3; }
-.game:hover { translate: 0 -5px; box-shadow: 0 4px 10px #173f350f, 0 26px 48px #173f3519; }
-.game-art { border-radius: 14px; overflow: hidden; display: block; border: 1px solid #173f3512; background: white; }
-.game-art img { width: 100%; aspect-ratio: 1024 / 500; object-fit: contain; }
-.game-body { display: flex; flex-direction: column; flex: 1; padding: 20px 8px 0; }
-.game-heading h3 { font-size: 25px; letter-spacing: -.7px; }
-.game-heading p { font-size: 12px; color: var(--muted); margin-top: 6px; }
-.game-description { font-size: 14px; line-height: 1.75; color: var(--muted); margin-block: 16px 20px; max-width: 490px; }
-.store-link { display: inline-block; width: fit-content; margin-top: auto; border-radius: 10px; transition: transform .2s, filter .2s; }
-.store-link:hover { transform: translateY(-2px); filter: drop-shadow(0 8px 14px #00000033); }
-.store-link img { width: 148px; height: auto; }
-.collection-note { text-align: center; font-size: 13px; color: var(--muted); margin-top: 52px; }
-.collection-note a { font-weight: bold; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--orange); }
-.collection-note a:hover { color: #a64f25; }
-
-/* About */
-.about-section { background: var(--ink); color: var(--paper); padding-block: 80px; position: relative; overflow: hidden; }
-.about-section::before { content: "✳"; position: absolute; right: 6%; top: -30px; font-size: 150px; color: #ffffff0d; transform: rotate(14deg); pointer-events: none; }
-.about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-.about-section .eyebrow { color: #d0dcb7; margin-bottom: 23px; }
-.about-copy p { font-size: 16px; line-height: 1.85; color: #d9e1d8; margin-bottom: 16px; }
-.about-signoff { display: inline-flex; align-items: center; gap: 16px; font-size: 13px; color: #e5efc6; margin-top: 12px; }
-.about-signoff > span { font-size: 29px; }
-
-/* Contact */
-.contact-section { padding-block: 84px; display: flex; justify-content: space-between; align-items: center; gap: 36px; }
-.contact-section h2 { font-size: 35px; margin-block: 20px; }
-.contact-section p:not(.eyebrow) { font-size: 14px; line-height: 1.75; max-width: 450px; color: var(--muted); }
-.contact-link { font-size: clamp(17px, 2vw, 25px); white-space: nowrap; border-bottom: 2px solid var(--orange); padding-bottom: 8px; letter-spacing: -.5px; font-weight: 600; transition: color .2s, border-color .2s; }
-.contact-link:hover { color: #a64f25; border-color: #a64f25; }
-.contact-link span { margin-left: 20px; }
-
-/* Footer */
-.site-footer { border-top: 1px solid var(--line); background: #ffffff59; }
-.footer-wrap { padding-block: 42px 24px; }
-.footer-top { display: grid; grid-template-columns: 1.2fr 1fr .6fr; gap: 30px; }
-.footer-top .wordmark { font-size: 33px; }
-.footer-top p { font-size: 12px; color: var(--muted); margin-top: 12px; }
-address { font-style: normal; font-size: 12px; line-height: 1.85; color: var(--muted); }
-address strong { font-size: 11px; letter-spacing: .7px; color: var(--ink); }
-.footer-top nav { display: flex; flex-direction: column; align-items: start; gap: 10px; font-size: 12px; }
-.footer-top nav a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--orange); }
-.footer-bottom { display: flex; justify-content: space-between; gap: 20px; font-size: 10px; color: var(--muted); margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); }
-
-@media (max-width: 1000px) {
-  .wrap { width: calc(100% - 56px); }
-  .hero { min-height: 550px; padding-block: 40px 55px; grid-template-columns: 1.1fr 1fr; gap: 28px; }
-  h1 { font-size: 60px; letter-spacing: -3px; }
-  .hero-art { gap: 16px; }
-  .hero-description { font-size: 15px; max-width: 325px; }
-  .hero-banner { border-width: 4px; border-radius: 14px; }
-  .hero-spark { font-size: 52px; }
-  .puzzle-strip span { gap: 15px; font-size: 11px; }
-  .about-inner { gap: 40px; }
+.game:hover { border-color: #bfcabc; box-shadow: 0 8px 22px #203e3608; }
+.game-art { display: block; margin: 10px 10px 0; border-radius: 10px; overflow: hidden; }
+.game-body { display: flex; flex-direction: column; flex: 1; padding: 24px; }
+.game-category { display: block; font-size: 9px; line-height: 1.5; color: var(--muted); letter-spacing: 1.3px; text-transform: uppercase; margin-bottom: 10px; }
+.game-heading h3 { font-size: 25px; line-height: 1.2; letter-spacing: -.7px; }
+.game-heading p { font-size: 12px; color: var(--muted); margin-top: 7px; line-height: 1.6; }
+.game-description { font-size: 13px; line-height: 1.8; color: var(--muted); margin-block: 15px 23px; }
+.store-link { display: inline-flex; align-items: center; align-self: flex-start; flex: 0 0 auto; width: 132px; min-height: 44px; margin-top: auto; border-radius: 7px; transition: opacity .2s; }
+.store-link img { display: block; width: 132px; max-width: 100%; height: auto; aspect-ratio: 564 / 168; object-fit: contain; }
+.store-link:hover { opacity: .78; }
+.collection-note { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 5px; font-size: 12px; color: var(--muted); margin-top: 38px; }
+.collection-note a { display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: var(--ink); font-weight: 600; }
+.collection-note .icon { width: 14px; height: 14px; }
+.collection-note a:hover { color: var(--orange); }
+/* Quiet, clearly separated studio and support sections. */
+.about-section { background: var(--ink); color: var(--paper); padding-block: 70px; }
+.about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; }
+.about-section .eyebrow { color: #ccd8c7; margin-bottom: 22px; }
+.about-copy p { font-size: 14px; line-height: 1.9; color: #d6dfd3; margin-bottom: 14px; }
+.about-signoff { display: inline-block; border-top: 1px solid #ffffff25; padding-top: 18px; margin-top: 6px; font-size: 11px; letter-spacing: .4px; color: #d8e6bd; }
+.contact-section { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding-block: 74px; }
+.contact-section .eyebrow { color: var(--muted); }
+.contact-section h2 { font-size: 36px; margin-block: 17px; }
+.contact-section p:not(.eyebrow) { font-size: 13px; line-height: 1.8; color: var(--muted); max-width: 360px; }
+.contact-link { display: inline-flex; align-items: center; justify-content: center; gap: 24px; min-height: 56px; border-bottom: 1px solid var(--ink); font-size: 22px; letter-spacing: -.6px; white-space: nowrap; transition: color .2s; }
+.contact-link:hover { color: var(--orange); }
+.site-footer { background: #eff1e7; border-top: 1px solid var(--line); }
+.footer-wrap { padding-block: 40px 22px; }
+.footer-top { display: grid; grid-template-columns: 1.2fr 1fr .6fr; gap: 36px; }
+.footer-top .wordmark { font-size: 31px; }
+.footer-top p { font-size: 11px; color: var(--muted); margin-top: 13px; }
+address { font-style: normal; font-size: 11px; line-height: 1.9; color: var(--muted); }
+address strong { font-size: 10px; letter-spacing: .8px; color: var(--ink); }
+.footer-top nav { display: flex; flex-direction: column; align-items: start; gap: 13px; font-size: 11px; }
+.footer-top nav a:hover { color: var(--orange); }
+.footer-bottom { display: flex; justify-content: space-between; gap: 20px; font-size: 10px; line-height: 1.6; color: var(--muted); margin-top: 32px; padding-top: 19px; border-top: 1px solid var(--line); }
+@media (max-width: 1050px) {
+  .wrap { width: calc(100% - 64px); }
+  .hero { gap: 36px; padding-block: 70px; }
+  h1 { font-size: 52px; letter-spacing: -2.8px; }
+  .hero-feature { padding: 16px; }
+  .feature-kicker { font-size: 13px; }
+  .game-body { padding: 20px; }
+  .about-inner { gap: 48px; }
+  .contact-link { font-size: 20px; gap: 16px; }
 }
-@media (max-width: 760px) {
-  :root { scroll-padding-top: 76px; }
-  .wrap { width: calc(100% - 40px); }
-  .site-header-inner { padding-block: 14px; }
+@media (max-width: 800px) {
+  :root { scroll-padding-top: 90px; }
+  .wrap { width: calc(100% - 48px); }
+  .site-header-inner { min-height: 76px; }
+  .site-header nav { gap: 22px; font-size: 12px; }
   .wordmark { font-size: 30px; }
-  .site-header nav { gap: 20px; font-size: 12px; }
-  .site-header nav .nav-contact { padding: 10px 14px; gap: 12px; }
-  .site-header nav > a:nth-child(2) { display: none; }
-  .hero { grid-template-columns: 1fr; padding-block: 36px; gap: 40px; min-height: 0; }
+  .hero { grid-template-columns: 1fr; gap: 42px; padding-block: 56px; }
   .hero-copy { text-align: center; }
-  .hero .eyebrow { justify-content: center; font-size: 10px; }
-  h1 { font-size: clamp(48px, 9vw, 68px); letter-spacing: -2.8px; margin-top: 20px; }
-  .hero-description { max-width: 400px; margin: 27px auto 0; font-size: 15px; line-height: 1.7; }
-  .button { margin-top: 23px; padding: 16px 22px; }
-  .hero-note { margin-top: 15px; }
-  .hero-art { width: min(470px, 95%); margin: 12px auto 15px; }
-  .hero-orbit { inset: 14px 0 0; }
-  .hero-spark { font-size: 52px; }
-  .puzzle-strip { padding-block: 16px; }
-  .puzzle-strip .wrap { justify-content: center; flex-wrap: wrap; gap: 12px 28px; }
-  .puzzle-strip span { font-size: 10px; gap: 12px; }
-  .puzzle-strip b { font-size: 18px; }
-  .puzzle-strip span:last-child { display: none; }
-  .games-section { padding-block: 60px 48px; }
-  .section-heading { align-items: start; flex-direction: column; gap: 17px; margin-bottom: 30px; }
+  .hero .eyebrow { justify-content: center; }
+  h1 { font-size: 62px; }
+  .hero-description { margin-inline: auto; max-width: 400px; }
+  .hero-feature { width: min(100%, 540px); margin-inline: auto; }
+  .feature-kicker { font-size: 15px; }
+  .puzzle-strip > .wrap { justify-content: center; }
+  .puzzle-strip > .wrap > span { display: none; }
+  .section-heading { align-items: start; flex-direction: column; gap: 16px; }
   .section-heading > p br { display: none; }
-  .section-heading h2 { font-size: 35px; }
-  .games-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 18px; }
+  .games-section { padding-block: 60px 42px; }
+  .games-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; }
   .game, .game:nth-child(-n+2) { grid-column: span 1; }
-  .game { border-radius: 18px; padding: 10px 10px 16px; }
-  .game-body { padding: 16px 4px 0; }
-  .game:last-child { grid-column: span 2; max-width: calc(50% - 9px); }
-  .game-art { border-radius: 12px; }
-  .game-heading h3 { font-size: 22px; }
-  .game-description { font-size: 13px; line-height: 1.7; }
-  .store-link img { width: 136px; }
+  .game:last-child { grid-column: 1 / -1; width: calc(50% - 9px); justify-self: center; }
   .about-section { padding-block: 54px; }
   .about-inner { grid-template-columns: 1fr; gap: 28px; }
-  .about-section h2 { font-size: 38px; }
-  .about-copy p { font-size: 15px; }
-  .contact-section { padding-block: 56px; align-items: start; flex-direction: column; gap: 25px; }
-  .contact-section h2 { font-size: 31px; }
-  .contact-link { font-size: 21px; }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 30px 20px; }
-  .footer-top > div { grid-column: span 2; }
-  .footer-bottom { flex-direction: column; gap: 10px; margin-top: 30px; }
+  .about-copy { max-width: 600px; }
+  .contact-section { padding-block: 54px; flex-direction: column; align-items: start; gap: 24px; }
+  .contact-link { font-size: 22px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-top > div { grid-column: 1 / -1; }
 }
-@media (max-width: 520px) {
-  .hero-art { width: 98%; }
-  .hero-banner { border-width: 3px; border-radius: 12px; }
-  .hero-spark { font-size: 43px; }
-  .hero-description { font-size: 14px; max-width: 320px; }
-  .games-grid { grid-template-columns: 1fr; gap: 24px; }
-  .game, .game:nth-child(-n+2), .game:last-child { grid-column: span 1; max-width: none; }
-  .game-heading h3 { font-size: 25px; }
-  .game-description { font-size: 14px; }
-  .store-link img { width: 148px; }
-  .site-header nav { gap: 15px; }
-  .site-header nav .nav-contact { border: 0; padding: 0; gap: 8px; background: none; }
-  .site-header nav .nav-contact:hover { color: #a64f25; }
-  .section-heading h2 { font-size: 32px; }
-  .section-heading > p { font-size: 13px; }
-  .puzzle-strip .wrap { gap: 10px; }
-  .puzzle-strip span { gap: 8px; font-size: 9px; }
-  .footer-top { grid-template-columns: 1.3fr 1fr; }
+@media (max-width: 540px) {
+  .wrap { width: calc(100% - 40px); }
+  .site-header-inner { min-height: 72px; gap: 12px; }
+  .wordmark { font-size: 28px; }
+  .site-header nav { gap: 16px; font-size: 11px; }
+  .site-header nav > a:nth-child(2) { display: none; }
+  .nav-contact { min-width: 102px; padding: 0 12px; gap: 9px; }
+  .nav-contact .icon { width: 15px; height: 15px; }
+  .hero { padding-block: 42px; gap: 34px; }
+  h1 { font-size: clamp(38px, 10.2vw, 55px); letter-spacing: -2px; margin-top: 22px; }
+  .hero-description { font-size: 14px; max-width: 320px; margin-top: 22px; }
+  .hero .eyebrow { font-size: 9px; letter-spacing: 1.4px; }
+  .button { margin-top: 25px; }
+  .hero-note { font-size: 10px; }
+  .hero-feature { border-radius: 18px; padding: 12px; }
+  .feature-topline { padding: 3px 2px 13px; }
+  .feature-topline .eyebrow { font-size: 8px; letter-spacing: 1px; }
+  .feature-number { font-size: 9px; }
+  .feature-bottomline { padding-top: 14px; gap: 10px; }
+  .feature-kicker { font-size: 12px; }
+  .feature-bottomline p { font-size: 10px; line-height: 1.6; margin-top: 4px; }
+  .circle-link { width: 36px; height: 36px; }
+  .puzzle-strip .wrap > div { gap: 12px; }
+  .puzzle-strip span { font-size: 9px; }
+  .puzzle-strip > .wrap { padding-block: 19px; }
+  h2 { font-size: 32px; letter-spacing: -1.3px; }
+  .section-heading > p { font-size: 12px; }
+  .games-grid { grid-template-columns: 1fr; gap: 23px; }
+  .game, .game:nth-child(-n+2), .game:last-child { grid-column: 1; width: 100%; }
+  .game-body { padding: 21px; }
+  .game-heading h3 { font-size: 26px; }
+  .game-description { font-size: 13px; }
+  .about-copy p { font-size: 13px; }
+  .contact-section h2 { font-size: 31px; }
+  .contact-link { font-size: 21px; gap: 16px; }
+  .footer-top { grid-template-columns: 1.25fr 1fr; gap: 28px 20px; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+}
+@media (max-width: 360px) {
+  .wrap { width: calc(100% - 32px); }
+  .site-header nav { gap: 10px; }
+  .wordmark { font-size: 26px; }
+  .nav-contact { min-width: 96px; padding-inline: 10px; }
+  .puzzle-strip .wrap > div { gap: 9px; }
+  .puzzle-strip span { font-size: 8px; }
+  .contact-link { font-size: 19px; }
 }
 @media (prefers-reduced-motion: reduce) {
   :root { scroll-behavior: auto; }

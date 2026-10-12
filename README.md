@@ -12,7 +12,7 @@ BOOPFUN LIMITED 的公司主页。托管在 Firebase Hosting，项目 `boopfun-w
 首页为无构建依赖的静态 HTML / CSS：`public/index.html`、`public/styles.css`。
 游戏展示仅使用商店横版 feature graphic，按原始 **1024 × 500** 比例完整显示；
 不要把图片固定为其它高度，也不要换成竖版玩法截图。网页图片为 WebP，
-首屏加载三张，其余延迟加载；不依赖外部字体或 JavaScript。
+首屏优先加载 Arrows Out 横图，其余延迟加载；不依赖外部字体或 JavaScript。
 
 - Arrows Out：`arrows/docs/store-listing/en-US/images/featureGraphic.png`
 - Arrows 3D：`arrows-3d/Docs/store-listing/en-US/images/featureGraphic.png`
@@ -25,6 +25,13 @@ BOOPFUN LIMITED 的公司主页。托管在 Firebase Hosting，项目 `boopfun-w
 五款游戏均指向各自的正式 Google Play 页面。`social.png` 为分享预览图；
 `robots.txt` 与 `sitemap.xml` 指向主域名。
 
+展示优先级固定为 **Arrows Out → Sudoku → Arrows 3D → Water Sort → boopdoku**。
+Arrows Out 同时占首屏推荐位。Google Play 官方徽标保持 132px 宽、原始比例，
+不要使用可拉伸到整张卡片宽度的样式。按钮文字与 SVG 箭头分别放在独立容器内居中。
+
+首页 stylesheet URL 带内容摘要，修改 CSS 后同步更新 `index.html` 中的 `?v=` 值；
+Firebase 对首页、HTML 与 CSS 使用 `max-age=0, must-revalidate`，避免新 HTML 混用旧 CSS。
+
 本地预览：
 
 ```bash
@@ -34,7 +41,7 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory public
 修改后检查桌面与手机宽度、图片自然比例与显示比例、五个商店入口及隐私链接。
 保留 `public/app-ads.txt`，发布后按下文核对线上与源码一致。
 
-> 首页维护：GPT-6（2026-10-12，官网重设计、横版商店素材与下载入口）；Kimi（2026-10-12，视觉美化、Google Play 官方徽标）
+> 首页维护：GPT-6（2026-10-12，官网重设计、横版商店素材与下载入口）；Kimi（2026-10-12，视觉美化、Google Play 官方徽标）；GPT-6（2026-10-12，整页重构、Arrows Out / Sudoku 优先、按钮对齐与缓存修复）
 
 ## 部署
 
