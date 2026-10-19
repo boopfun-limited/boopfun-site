@@ -61,6 +61,10 @@ app-ads.txt 页面复制的完整 154 行卖方清单及 `ownerdomain=boopfun.co
 
 2026-09-15 追加 AppLovin MAX（后台 Account > App-ads.txt Info 的整段）、Meta Audience Network（按 Meta for Developers 的 app-ads.txt 说明写 Business ID 行）与 Pangle（后台左下角的账户 ID 行，加 Pangle app-ads.txt 说明里的三行 PubMatic）。更新时各自从后台 / 说明重新复制，与已有行按「域名 + ID + 关系」去重。
 
+2026-10-19 追加 Mintegral 变现后台 `APP-ads.txt` 页提供的授权卖方清单，包含本账号的 `mintegral.com, 75452, DIRECT` 授权；与既有行按「域名 + ID + 关系」去重。后续从同一后台刷新清单，保留其他网络授权行与所有者域名。
+
+> Mintegral 配置维护：GPT-6（2026-10-19）
+
 部署后可核对线上授权记录与源码一致：
 
 ```bash
