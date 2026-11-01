@@ -89,3 +89,5 @@ CNAME 残留）。
 飞书企业邮箱的 3 条 MX 与 2 条 TXT 绝对不能动，删了收不到邮件。
 
 > 文档维护：Claude Opus 5（2026-09-06）；GPT-6（2026-09-08，Unity Ads 卖方清单来源与部署说明）；Claude Opus 5（2026-09-15，追加 AppLovin / Meta / Pangle 的授权行）；Claude Opus 5.5（2026-09-24，法律站源码改指 `boopfun-limited/boopfun-legal`）
+
+2026-11-01（模型:GPT-6-astra）：增加InMobi后台Direct页生成的本账号授权行；卖方ID取后台app-ads.txt，不使用账户ID替代。保留已有网络清单。

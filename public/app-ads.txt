@@ -1082,3 +1082,6 @@ freewheel.tv, sg1332502, RESELLER
 insticator.com, e2d3e33c-9911-477a-8ae2-f059870c67c0, RESELLER, b3511ffcafb23a32
 
 ownerdomain=boopfun.com
+
+# InMobi direct publisher authorization (2026-11-01)
+inmobi.com, 421d7d8c7f0a411ba84848c2ebfb0ee0, DIRECT, 83e75a7ae333ca9d
